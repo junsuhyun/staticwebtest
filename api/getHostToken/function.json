@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ],
+      "route": "tokens/host"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "table",
+      "direction": "in",
+      "name": "meeting",
+      "tableName": "meetings",
+      "partitionKey": "1",
+      "rowKey": "{meetingId}",
+      "connection": "Storage"
+    }
+  ]
+}
